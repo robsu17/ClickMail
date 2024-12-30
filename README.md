@@ -34,4 +34,9 @@
 
 ## Principais funcionalidades de um Template:
 
-- []
+- [ ] Deve ser possível criar um template;
+- [ ] Deve ser possível visualizar um template;
+- [ ] Deve ser possível editar um template;
+- [ ] Deve ser possível apagar um template;
+- [ ] Deve ser possível pesquisar por um template;
+- [ ] Deve ser possível navegar pelos templates através da paginação;
