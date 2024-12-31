@@ -33,10 +33,12 @@ export default {
                 'accent-pink-dark': '#99005E',
 
                 'border-primary': '#292A2E',
-                'border-secondary': '#393A40'
+                'border-secondary': '#393A40',
+
+                'placeholder': '#6C6E79'
             }
         },
     },
 
-    plugins: [forms],
+    plugins: [],
 };
