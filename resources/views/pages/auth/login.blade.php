@@ -1,4 +1,5 @@
 @extends('layouts.auth')
+@section('title', 'Login')
 
 @section('content')
     <div class="flex flex-col items-center space-y-6">
@@ -6,7 +7,7 @@
             <img src="{{ asset('img/logo.svg') }}" alt="logo" class="w-full h-full">
         </div>
         <div class="bg-background-secondary px-5 py-6 min-w-[400px] rounded-md">
-                <form class="space-y-5" action="{{ route('authenticate') }}" method="post">
+                <form class="space-y-5" action="{{ route('login.store') }}" method="post">
                 @csrf
                 <x-input-text
                     name="email"
