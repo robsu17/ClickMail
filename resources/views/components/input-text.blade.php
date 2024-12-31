@@ -3,6 +3,7 @@
     <input
         class="bg-background-tertiary placeholder:text-placeholder px-3 py-2 rounded-md outline-none text-white"
         {{ $attributes }}
+        value="{{ old($name) }}"
     />
     @if($errors->has($name))
         <span class="text-red-500 text-sm">{{ $errors->first($name) }}</span>

@@ -1,10 +1,10 @@
 ## Principais funcionalidades de um usuário: 
 
-- [ ] Deve ser possível criar um usuário;
-- [ ] O campo e-mail ao criar um usuário deve ser validado;
-- [ ] O campo de senha ao criar usuário deve ser validado;
-- [ ] A senha do usuário deve ser criptografada;
-- [ ] Deve ser possível logar e deslogar da aplicação;
+- [x] Deve ser possível criar um usuário;
+- [x] O campo e-mail ao criar um usuário deve ser validado;
+- [x] O campo de senha ao criar usuário deve ser validado;
+- [x] A senha do usuário deve ser criptografada;
+- [x] Deve ser possível logar e deslogar da aplicação;
 
 ## Principais funcionalidades de uma Campanha:
 

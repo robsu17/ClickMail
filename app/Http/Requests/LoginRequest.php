@@ -32,7 +32,7 @@ class LoginRequest extends FormRequest
         return [
             'email.required' => 'O campo email deve ser preenchido',
             'password.required' => 'O campo senha deve ser preenchido',
-            'password.min' => 'O campo senha deve ter no mínimo 6 caracteres'
+            'password.min' => 'O campo senha deve ter no mínimo 6 caracteres',
         ];
     }
 }

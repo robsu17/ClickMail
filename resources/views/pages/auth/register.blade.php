@@ -7,6 +7,11 @@
             <img src="{{ asset('img/logo.svg') }}" alt="logo" class="w-full h-full">
         </div>
         <div class="bg-background-secondary px-5 py-6 min-w-[400px] rounded-md">
+            @if($errors->any())
+                @foreach($errors->all() as $error)
+                    <span class="text-red-500 text-sm font-bold">{{ $error }}</span>
+                @endforeach
+            @endif
             <form class="space-y-5" action="{{ route('register.store') }}" method="post">
                 @csrf
                 <x-input-text
