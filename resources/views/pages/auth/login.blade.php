@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title', 'Login')
+@section('title', 'Entrar')
 
 @section('content')
     <div class="flex flex-col items-center space-y-6">
