@@ -34,7 +34,7 @@ class LoginController extends Controller
                 throw new InvalidCredentialsException();
             }
 
-            return redirect()->route('dashboard.index');
+            return redirect()->route('campaigns.index');
         } catch (InvalidCredentialsException $exception) {
             return back()->withErrors([$exception->getMessage()])->withInput();
         } catch (\Exception $exception) {

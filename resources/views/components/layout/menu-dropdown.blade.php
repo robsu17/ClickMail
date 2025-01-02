@@ -57,7 +57,7 @@
         </a>
 
         <a
-            href="#"
+            href="{{ route('logout') }}"
             class="px-2 lg:py-1.5 py-2 w-full flex items-center rounded-md transition-colors text-left text-white hover:bg-background-secondary  disabled:opacity-50 disabled:cursor-not-allowed"
         >
             Sair

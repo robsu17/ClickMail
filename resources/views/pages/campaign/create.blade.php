@@ -2,5 +2,9 @@
 @section('title', 'Campanhas')
 
 @section('content')
-    <h1>formulario</h1>
+    <div>
+        <div>
+            <x-campaign.new-form />
+        </div>
+    </div>
 @endsection
