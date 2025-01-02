@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Exceptions\InvalidCredentialsException;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class LoginController extends Controller
 {
@@ -16,22 +18,31 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $userNotExist = User::query()
-            ->where('email', $request->email)
-            ->first();
+        try {
+            $user = User::query()->where('email', $request->email)->first();
 
-        if (!$userNotExist) {
-            return redirect()->back()->withErrors(['invalidCredentials' => 'Credênciais inválidas.']);
+            if (!$user) {
+                throw new InvalidCredentialsException();
+            }
+
+            $userAttempt = Auth::attempt([
+                'email' => $request->email,
+                'password' => $request->password
+            ]);
+
+            if (!$userAttempt) {
+                throw new InvalidCredentialsException();
+            }
+
+            return redirect()->route('dashboard.index');
+        } catch (InvalidCredentialsException $exception) {
+            return back()->withErrors([$exception->getMessage()])->withInput();
+        } catch (\Exception $exception) {
+            Log::error('LoginController@login', [
+                'exception' => $exception->getMessage(),
+            ]);
+
+            return back()->withErrors(['internalError' => 'Erro interno no servidor, tente novamente mais tarde'])->withInput();
         }
-
-        $credentials = $request->only('email', 'password');
-
-        $isAttempt = Auth::attempt($credentials);
-
-        if (!$isAttempt) {
-            return redirect()->back()->withErrors(['invalidCredentials' => 'Credênciais inválidas.']);
-        }
-
-        return redirect()->route('dashboard.index');
     }
 }

@@ -7,8 +7,12 @@
             @foreach($links as $link)
                 <li>
                     <a
-                        href="#"
-                        class="{{ $link['key'] == request()->path() ? 'text-[#1C65FF] font-bold' : 'hover:text-white/80' }}"
+                        href="{{ $link['route'] }}"
+                        class="{{
+                            $link['key'] == $currentKey
+                                ? 'text-[#1C65FF] font-bold'
+                                : 'hover:text-white/80'
+                        }}"
                     >
                         {{ $link['label'] }}
                     </a>
