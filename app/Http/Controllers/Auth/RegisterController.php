@@ -28,7 +28,7 @@ class RegisterController extends Controller
 
             Auth::login($user);
 
-            return redirect()->route('dashboard.index');
+            return redirect()->route('campaigns.index');
         } catch (\Exception $exception) {
             Log::error('RegisterController@register', [
                 'exception' => $exception->getMessage(),

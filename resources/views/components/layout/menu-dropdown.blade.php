@@ -50,7 +50,7 @@
         class="absolute left-0 min-w-48 rounded-lg shadow-sm mt-2 z-10 origin-top-left p-1.5 outline-none border border-gray-800 bg-background-tertiary"
     >
         <a
-            href="#"
+            href="{{ route('profile.index') }}"
             class="px-2 lg:py-1.5 py-2 w-full flex items-center rounded-md transition-colors text-left text-white hover:bg-background-secondary  disabled:opacity-50 disabled:cursor-not-allowed"
         >
             Perfil
