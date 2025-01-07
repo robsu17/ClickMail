@@ -21,6 +21,7 @@
                     label="Email"
                     placeholder="email@example.com"
                     error="{{ $errors }}"
+                    autocomplete="off"
                 />
                 <x-input-text
                     name="password"
